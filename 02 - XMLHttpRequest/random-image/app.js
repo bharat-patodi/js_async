@@ -1,10 +1,7 @@
-// Your code goes here
 let body = document.querySelector("body");
-body.style.backgroundColor = "#e74c3c";
+body.style.backgroundColor = "#ddd";
 
 let wrapper = document.querySelector(".wrapper");
-let submit = document.querySelector("input[type='submit']");
-let input = document.querySelector("input[type='text']");
 let displaySection = document.querySelector(".display-profile");
 let profileInput = "";
 
@@ -12,10 +9,9 @@ let profileInput = "";
 
 let xhttp = new XMLHttpRequest();
 
-submit.addEventListener('click', displayProfile);
+submit.addEventListener('click', displayImage);
 
-function getProfile() {};
-function displayProfile() {
+function displayImage() {
     profileInput = input.value;
     xhttp.open('GET', `https://api.github.com/users/${profileInput}`);
     xhttp.send();
@@ -25,9 +21,9 @@ xhttp.onload = () => {
     let user = xhttp.response;
     console.log(user);
     let userParsed = JSON.parse(xhttp.response);
-    displaySection.innerHTML = (`<h2>User Id: ${userParsed.login}</h2><p>Name: ${userParsed.name}</p><img src="${userParsed.avatar_url}">`);
+    displaySection.innerHTML = (`<p>User Id: ${userParsed.login}</p><p>Name: ${userParsed.name}</p><img src="${userParsed.avatar_url}">`);
 };
 
 xhttp.onerror = () => {
-    alert("Quosh was the best!")
+    alert("Quosh was the best!");
 }
