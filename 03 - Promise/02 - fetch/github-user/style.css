@@ -1,0 +1,192 @@
+/* ---------------------------------------------------------------
+CSS Reset (minified)
+--------------------------------------------------------------- */
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 auto;
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  font-size: 3.6em;
+}
+
+h2 {
+  font-size: 2.4em;
+  font-weight: 100;
+  color: rgb(240, 234, 234);
+  text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+label,
+input {
+  display: block;
+}
+
+p {
+  font-weight: 700;
+}
+
+.wrapper {
+  margin: 2rem auto;
+  max-width: 100ch;
+  background-color: brown;
+  padding: 2rem;
+  text-align: center;
+}
+
+.wrapper img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 10px solid whitesmoke;
+  max-width: 300px;
+}
+
+input {
+  font-size: 1.2rem;
+  display: inline;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+input[type="submit"] {
+  cursor: pointer;
+}

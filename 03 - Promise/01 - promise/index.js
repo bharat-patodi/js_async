@@ -1,27 +1,35 @@
 // Challenge 1
 
 function sayHello() {
-
+  setTimeout(() => {
+    console.log("Hello");
+  }, 1000);
 }
 
 // Uncomment the line below when ready
-// sayHello(); // should log "Hello" after 1000ms
+sayHello(); // should log "Hello" after 1000ms
 
 
 // Challenge 2
 var promise = new Promise(function (resolve, reject) {
-  // ADD CODE HERE
+  setTimeout(() => {
+    resolve("resolved");
+  }, 1000);
+})
+promise.then(() => {
+  console.log(promise);
 });
 
 // Should print out "Resolved!"
-// ADD CODE HERE
+console.log(promise);
 
 
 // Challenge 3
 
 promise = new Promise(function(resolve, reject) {
-  // ADD CODE HERE
-})
+  reject("Rejected!")
+});
+promise.catch(console.log(promise));
 
 // Should print out "Reject!"
 // ADD CODE HERE
@@ -30,29 +38,37 @@ promise = new Promise(function(resolve, reject) {
 // Challenge 4
 
 promise = new Promise(function (resolve, reject) {
-  // ADD CODE HERE
+  resolve('Promise has been resolved!');
 });
 
 // Uncomment the lines below when ready
 // promise.then(() => console.log('Promise has been resolved!));
 // console.log("I'm not the promise!");
+// This is async code. This is why, the async part will be put in the callback queue and will stay there till the call stack gets empty.
 
 
 // Challenge 5
 function delay(){
-
+	let newPromise = new Promise(function(resolve, reject) {
+    return   setTimeout(() => {
+    resolve();
+  }, 3000);
+  });
+  return newPromise;
 }
+
 
 // Uncomment the code below to test
 // This code should log "Hello" after 1000ms
-// delay().then(sayHello);
+delay().then(sayHello);
 
 
 // Challenge 6
-//
 // ADD CODE BELOW
-// var secondPromise =
-// var firstPromise =
+var secondPromise = new Promise((resolve, reject) => resolve("Second!"));
+var firstPromise = new Promise((resolve, reject) => resolve(`secondPromise`));
+
+firstPromise.then(() => secondPromise).then(console.log(firstPromise));
 
 
 // Challenge 7
@@ -74,5 +90,5 @@ const fakeAPICall = (i) => {
 };
 
 function getAllData() {
-  // CODE GOES HERE
+  return Promise.all([fakeAPICall(0), fakeAPICall(1), fakeAPICall(2)]).then((resultOfPromiseAll) => console.log(resultOfPromiseAll));
 }
