@@ -179,6 +179,7 @@ p {
   margin-bottom: 20px;
   border: 10px solid whitesmoke;
   max-width: 300px;
+  display: inline-block;
 }
 
 input {
@@ -189,4 +190,17 @@ input {
 }
 input[type="submit"] {
   cursor: pointer;
+}
+
+.repos,
+.followers {
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.repos span,
+.followers span {
+  font-weight: 700;
 }

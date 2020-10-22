@@ -1,3 +1,7 @@
+// import UNSPLASH_KEY from '../../config';
+// TODO: Hide API key using Node???
+
+let UNSPLASH_KEY = "xhD5sNxcCBe09Fun2jGNRq1g1sMHjNvVCl1z4JaK7Hs";
 let body = document.querySelector("body");
 body.style.backgroundColor = "#ddd";
 
@@ -12,7 +16,7 @@ let xhttp = new XMLHttpRequest();
 submit.addEventListener('click', displayImage);
 
 function displayImage() {
-    xhttp.open('GET', `https://api.unsplash.com/photos/random/?client_id=xhD5sNxcCBe09Fun2jGNRq1g1sMHjNvVCl1z4JaK7Hs`);
+    xhttp.open('GET', `https://api.unsplash.com/photos/random/?client_id=${UNSPLASH_KEY}`);
     xhttp.send();
     xhttp.onload = () => {
         let user = xhttp.response;

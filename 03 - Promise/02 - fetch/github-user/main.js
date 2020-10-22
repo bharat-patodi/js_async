@@ -33,12 +33,28 @@ submit.addEventListener('click', displayProfile);
 // }
 
 // 3rd method using the fetch API
-
+let follower_url = "";
+let repo_url = "";
 function displayProfile() {
     fetch(`https://api.github.com/users/${input.value}`)
     .then(response => response.json())
     .then(response => {
+        console.log(response);
         displaySection.innerHTML = (`<h2>User Id: ${response.login}</h2><p>Name: ${response.name}</p><img src="${response.avatar_url}">`);
-    });
-}
+        follower_url = response.followers_url;
+        repo_url = response.repos_url;
+    }).then(() => {
+        fetch(follower_url)
+        .then(response => response.json())
+        .then(response => {
+            displaySection.innerHTML += `<section class="followers">Followers: <p>${response[0].login}</p><p>${response[1].login}</p><p>${response[2].login}</p><p>${response[3].login}</p><p>${response[4].login}</p></section>`;
 
+        })}
+    ).then(() => {
+        fetch(repo_url)
+        .then(response => response.json())
+        .then(response => {
+            displaySection.innerHTML += `<section class="followers">Repos: <p>${response[0].name}</p><p>${response[1].name}</p><p>${response[2].name}</p><p>${response[3].name}</p><p>${response[4].name}</p></section>`;
+        })}
+    )
+}
